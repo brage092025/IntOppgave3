@@ -24,9 +24,9 @@ The difference can be observed in the console output capturing the two drones(Ea
 | **With Join**                                       | **Without Join**                                  |
 |-----------------------------------------------------|---------------------------------------------------|
 | Dronerace with Threads!                             | Dronerace with Threads!                           |
-| Thread Eagle: Started...                            | <span style="color:green;">Both Threads have finished operating!</span> |
+| Thread Eagle: Started...                            | <div style="color:green;">Both Threads have finished operating!</div> |
 | Thread Hawk: Started...                             |                                                   |
-| Hawk has reached node 0 of 5...                     | <span style="color:blue;">Press L to see the racelog...</span> |
+| Hawk has reached node 0 of 5...                     | <div style="color:blue;">Press L to see the racelog...</div> |
 | Eagle has reached node 0 of 5...                    | Thread Hawk: Started...                           |
 | Hawk has reached node 1 of 5...                     | Thread Eagle: Started...                          |
 | Hawk has reached node 2 of 5...                     | Hawk has reached node 0 of 5...                   |
@@ -40,10 +40,12 @@ The difference can be observed in the console output capturing the two drones(Ea
 | Eagle has reached node 4 of 5...                    | Hawk has reached node 5 of 5...                   |
 | Eagle has reached node 5 of 5...                    | Thread Hawk: Finished                             |
 | Thread Eagle: Finished                              | Eagle has reached node 3 of 5...                  |
-| <span style="color:green;">Both Threads have finished operating!</span> | Eagle has reached node 4 of 5...                  |
-| <span style="color:blue;">Press L to see the racelog...</span> | Eagle has reached node 5 of 5...                  |
+| <div style="color:green;">Both Threads have finished operating!</div> | Eagle has reached node 4 of 5...                  |
+| <div style="color:blue;">Press L to see the racelog...</div> | Eagle has reached node 5 of 5...                  |
 |                                                     | Thread Eagle: Finished                            |
+
 </details>
+
 <br>
 
 **Overloading shared resources**
@@ -53,31 +55,35 @@ We can see that console writeline, being a shared resource, is affected by the m
 <details>
   <summary><i>Example with 3 drones, all with 250ms delay (Click to Expand)</i></summary>
 
-> <span style="color:red;">Thread Hawk: Started...</span>
-> <span style="color:blue;">Thread Falcon: Started...</span>
-> <span style="color:green;">Thread Eagle: Started...</span>
-> <span style="color:red;">Hawk has reached node 0 of 5...</span>
-> <span style="color:green;">Eagle has reached node 0 of 5...</span>
-> <span style="color:blue;">Falcon has reached node 0 of 5...</span>
-> <span style="color:blue;">Falcon has reached node 1 of 5...</span>
-> <span style="color:green;">Eagle has reached node 1 of 5...</span>
-> <span style="color:red;">Hawk has reached node 1 of 5...</span>
-> <span style="color:green;">Eagle has reached node 2 of 5...</span>
-> <span style="color:red;">Hawk has reached node 2 of 5...</span>
-> <span style="color:blue;">Falcon has reached node 2 of 5...</span>
-> <span style="color:green;">Eagle has reached node 3 of 5...</span>
-> <span style="color:red;">Hawk has reached node 3 of 5...</span>
-> <span style="color:blue;">Falcon has reached node 3 of 5...</span>
-> <span style="color:green;">Eagle has reached node 4 of 5...</span>
-> <span style="color:red;">Hawk has reached node 4 of 5...</span>
-> <span style="color:blue;">Falcon has reached node 4 of 5...</span>
-> <span style="color:green;">Eagle has reached node 5 of 5...</span>
-> <span style="color:green;">Thread Eagle: Finished</span>
-> <span style="color:red;">Hawk has reached node 5 of 5...</span>
-> <span style="color:red;">Thread Hawk: Finished</span>
-> <span style="color:blue;">Falcon has reached node 5 of 5...</span>
-> <span style="color:blue;">Thread Falcon: Finished</span>
+<div style="background-color:#1e1e1e; color:white; padding:10px; border-radius:6px; font-family:monospace; overflow-x:auto; white-space:pre;">
+<span style="color:red;">Thread Hawk: Started...</span>
+<span style="color:blue;">Thread Falcon: Started...</span>
+<span style="color:green;">Thread Eagle: Started...</span>
+<span style="color:red;">Hawk has reached node 0 of 5...</span>
+<span style="color:green;">Eagle has reached node 0 of 5...</span>
+<span style="color:blue;">Falcon has reached node 0 of 5...</span>
+<span style="color:blue;">Falcon has reached node 1 of 5...</span>
+<span style="color:green;">Eagle has reached node 1 of 5...</span>
+<span style="color:red;">Hawk has reached node 1 of 5...</span>
+<span style="color:green;">Eagle has reached node 2 of 5...</span>
+<span style="color:red;">Hawk has reached node 2 of 5...</span>
+<span style="color:blue;">Falcon has reached node 2 of 5...</span>
+<span style="color:green;">Eagle has reached node 3 of 5...</span>
+<span style="color:red;">Hawk has reached node 3 of 5...</span>
+<span style="color:blue;">Falcon has reached node 3 of 5...</span>
+<span style="color:green;">Eagle has reached node 4 of 5...</span>
+<span style="color:red;">Hawk has reached node 4 of 5...</span>
+<span style="color:blue;">Falcon has reached node 4 of 5...</span>
+<span style="color:green;">Eagle has reached node 5 of 5...</span>
+<span style="color:green;">Thread Eagle: Finished</span>
+<span style="color:red;">Hawk has reached node 5 of 5...</span>
+<span style="color:red;">Thread Hawk: Finished</span>
+<span style="color:blue;">Falcon has reached node 5 of 5...</span>
+<span style="color:blue;">Thread Falcon: Finished</span>
+</div>
+
 </details>
+
 <br>
 When logging detailed timestamps we can also observe some variations from the set delay. Below a detailed log of 1 of 3 drones, running through 100 nodes with 0ms delay. We can see variations in several ms between some nodes.
 
@@ -86,6 +92,7 @@ When logging detailed timestamps we can also observe some variations from the se
 <details>
   <summary><i>Example: Detailed log for drone Hawk (Click to Expand)</i></summary>
 
+<pre>
 > Timestamp (time elapsed, time elapsed since previous node) logevent
 > 11:04:37.912 (+0 ms, Δ=0 ms) Started
 > 11:04:37.935 (+28 ms, Δ=0 ms) Node 1
@@ -190,6 +197,7 @@ When logging detailed timestamps we can also observe some variations from the se
 > 11:04:38.091 (+184 ms, Δ=2 ms) Node 99
 > 11:04:38.093 (+186 ms, Δ=2 ms) Node 100
 > 11:04:38.097 (+190 ms, Δ=4 ms) Finished
+</pre>
 </details>
 <br>
 
@@ -255,10 +263,14 @@ log.Log(drone.Name, $"Resuming after {totalDelay}ms delay at node {currentNode}"
 </details>
 <br>
 
-### C - “Async orchestration” (async/await)
+### C - “Async orchestration” (Async/Await)
+
+Keeping the same simulated failures as in section B.
+
+Structure is much cleaner and more logical. A lot less "boilerplate" code which makes it easier to maintain.
 
 
-### D - “Control Tower API” (HttpClient with optional selfmade HttpListener)
+### D - “Control Tower API” (HttpClient with Async/Await)
 
 I chose to keep it simple and go for option one - where I just consume an API and map it to some relevant factors. Using AsyncRace as the startingpoint for the code. 
 
@@ -309,11 +321,3 @@ So without `Join` the subsequent code executed immediately, and console output w
 | **Resource usage** | Heavy: one OS thread per drone, blocking with `Sleep`, poor scalability.                                                    | Light: uses thread pool + non-blocking waits, but still manual logic.                                                     | Very efficient: async frees threads during waits, supports massive concurrency.                                         |
 | **Error handling** | Primitive: exceptions in threads don’t propagate; must capture manually.                                                    | Structured but manual: must call `SetException` and manage propagation yourself.                                          | Automatic: exceptions bubble naturally; `try/catch` integrates seamlessly with async.                                   |
 | **Readability**    | Moderate: simple concepts but low-level and verbose. Blocking logic reduces clarity.                                        | Low: nested callbacks, boilerplate, continuations make code harder to read.                                               | Excellent: looks synchronous, minimal boilerplate, easiest to maintain.                                                 |
-
-
-**What was the biggest challenge of consuming HTTP asyncronous? How did you resolve timeouts/errors?**
-
-**When would you choose ``Task/TCS`` vs ``Async/Await`` in a real project?**
-
-**Mention two specific situations where blocked asynchronous methods would cause an issue** 
-
