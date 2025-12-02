@@ -55,30 +55,33 @@ We can see that console writeline, being a shared resource, is affected by the m
 <details>
   <summary><i>Example with 3 drones, all with 250ms delay (Click to Expand)</i></summary>
 
-<span style="color:red;">Thread Hawk: Started...</span>
-<span style="color:blue;">Thread Falcon: Started...</span>
-<span style="color:green;">Thread Eagle: Started...</span>
-<span style="color:red;">Hawk has reached node 0 of 5...</span>
-<span style="color:green;">Eagle has reached node 0 of 5...</span>
-<span style="color:blue;">Falcon has reached node 0 of 5...</span>
-<span style="color:blue;">Falcon has reached node 1 of 5...</span>
-<span style="color:green;">Eagle has reached node 1 of 5...</span>
-<span style="color:red;">Hawk has reached node 1 of 5...</span>
-<span style="color:green;">Eagle has reached node 2 of 5...</span>
-<span style="color:red;">Hawk has reached node 2 of 5...</span>
-<span style="color:blue;">Falcon has reached node 2 of 5...</span>
-<span style="color:green;">Eagle has reached node 3 of 5...</span>
-<span style="color:red;">Hawk has reached node 3 of 5...</span>
-<span style="color:blue;">Falcon has reached node 3 of 5...</span>
-<span style="color:green;">Eagle has reached node 4 of 5...</span>
-<span style="color:red;">Hawk has reached node 4 of 5...</span>
-<span style="color:blue;">Falcon has reached node 4 of 5...</span>
-<span style="color:green;">Eagle has reached node 5 of 5...</span>
-<span style="color:green;">Thread Eagle: Finished</span>
-<span style="color:red;">Hawk has reached node 5 of 5...</span>
-<span style="color:red;">Thread Hawk: Finished</span>
-<span style="color:blue;">Falcon has reached node 5 of 5...</span>
-<span style="color:blue;">Thread Falcon: Finished</span>
+```ansi
+[31mThread Hawk: Started...[0m
+[34mThread Falcon: Started...[0m
+[32mThread Eagle: Started...[0m
+[31mHawk has reached node 0 of 5...[0m
+[32mEagle has reached node 0 of 5...[0m
+[34mFalcon has reached node 0 of 5...[0m
+[34mFalcon has reached node 1 of 5...[0m
+[32mEagle has reached node 1 of 5...[0m
+[31mHawk has reached node 1 of 5...[0m
+[32mEagle has reached node 2 of 5...[0m
+[31mHawk has reached node 2 of 5...[0m
+[34mFalcon has reached node 2 of 5...[0m
+[32mEagle has reached node 3 of 5...[0m
+[31mHawk has reached node 3 of 5...[0m
+[34mFalcon has reached node 3 of 5...[0m
+[32mEagle has reached node 4 of 5...[0m
+[31mHawk has reached node 4 of 5...[0m
+[34mFalcon has reached node 4 of 5...[0m
+[32mEagle has reached node 5 of 5...[0m
+[32mThread Eagle: Finished[0m
+[31mHawk has reached node 5 of 5...[0m
+[31mThread Hawk: Finished[0m
+[34mFalcon has reached node 5 of 5...[0m
+[34mThread Falcon: Finished[0m
+```
+
 </details>
 
 <br>
