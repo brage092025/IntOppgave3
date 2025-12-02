@@ -80,6 +80,7 @@ We can see that console writeline, being a shared resource, is affected by the m
 🟦 Falcon has reached node 5 of 5...
 🟦 Thread Falcon: Finished
 
+
 </details>
 
 <br>
