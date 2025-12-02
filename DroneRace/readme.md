@@ -20,7 +20,7 @@ The difference can be observed in the console output capturing the two drones(Ea
 
 <details>
   <summary><i>Example: Comparison of outputs (Click to Expand)</i></summary>
-
+<pre>
 | **With Join**                                       | **Without Join**                                  |
 |-----------------------------------------------------|---------------------------------------------------|
 | Dronerace with Threads!                             | Dronerace with Threads!                           |
@@ -44,6 +44,7 @@ The difference can be observed in the console output capturing the two drones(Ea
 | <div style="color:blue;">Press L to see the racelog...</div> | Eagle has reached node 5 of 5...                  |
 |                                                     | Thread Eagle: Finished                            |
 
+</pre>
 </details>
 
 <br>
@@ -54,7 +55,7 @@ We can see that console writeline, being a shared resource, is affected by the m
 
 <details>
   <summary><i>Example with 3 drones, all with 250ms delay (Click to Expand)</i></summary>
-
+<pre>
 <div style="background-color:#1e1e1e; color:white; padding:10px; border-radius:6px; font-family:monospace; overflow-x:auto; white-space:pre;">
 <span style="color:red;">Thread Hawk: Started...</span>
 <span style="color:blue;">Thread Falcon: Started...</span>
@@ -82,6 +83,7 @@ We can see that console writeline, being a shared resource, is affected by the m
 <span style="color:blue;">Thread Falcon: Finished</span>
 </div>
 
+</pre>
 </details>
 
 <br>
