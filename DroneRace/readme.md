@@ -20,31 +20,30 @@ The difference can be observed in the console output capturing the two drones(Ea
 
 <details>
   <summary><i>Example: Comparison of outputs (Click to Expand)</i></summary>
-<pre>
-| **With Join**                                       | **Without Join**                                  |
-|-----------------------------------------------------|---------------------------------------------------|
-| Dronerace with Threads!                             | Dronerace with Threads!                           |
-| Thread Eagle: Started...                            | <div style="color:green;">Both Threads have finished operating!</div> |
-| Thread Hawk: Started...                             |                                                   |
-| Hawk has reached node 0 of 5...                     | <div style="color:blue;">Press L to see the racelog...</div> |
-| Eagle has reached node 0 of 5...                    | Thread Hawk: Started...                           |
-| Hawk has reached node 1 of 5...                     | Thread Eagle: Started...                          |
-| Hawk has reached node 2 of 5...                     | Hawk has reached node 0 of 5...                   |
-| Eagle has reached node 1 of 5...                    | Hawk has reached node 1 of 5...                   |
-| Hawk has reached node 3 of 5...                     | Eagle has reached node 0 of 5...                  |
-| Hawk has reached node 4 of 5...                     | Hawk has reached node 2 of 5...                   |
-| Eagle has reached node 2 of 5...                    | Eagle has reached node 1 of 5...                  |
-| Hawk has reached node 5 of 5...                     | Hawk has reached node 3 of 5...                   |
-| Thread Hawk: Finished                               | Hawk has reached node 4 of 5...                   |
-| Eagle has reached node 3 of 5...                    | Eagle has reached node 2 of 5...                  |
-| Eagle has reached node 4 of 5...                    | Hawk has reached node 5 of 5...                   |
-| Eagle has reached node 5 of 5...                    | Thread Hawk: Finished                             |
-| Thread Eagle: Finished                              | Eagle has reached node 3 of 5...                  |
-| <div style="color:green;">Both Threads have finished operating!</div> | Eagle has reached node 4 of 5...                  |
-| <div style="color:blue;">Press L to see the racelog...</div> | Eagle has reached node 5 of 5...                  |
-|                                                     | Thread Eagle: Finished                            |
 
-</pre>
+| **With Join**                              | **Without Join**                            |
+|---------------------------------------------|----------------------------------------------|
+| Dronerace with Threads!                     | Dronerace with Threads!                      |
+| Thread Eagle: Started...                    | 🟩 Both Threads have finished operating!      |
+| Thread Hawk: Started...                     |                                              |
+| Hawk has reached node 0 of 5...             | 🟦 Press L to see the racelog...              |
+| Eagle has reached node 0 of 5...            | Thread Hawk: Started...                      |
+| Hawk has reached node 1 of 5...             | Thread Eagle: Started...                     |
+| Hawk has reached node 2 of 5...             | Hawk has reached node 0 of 5...              |
+| Eagle has reached node 1 of 5...            | Hawk has reached node 1 of 5...              |
+| Hawk has reached node 3 of 5...             | Eagle has reached node 0 of 5...             |
+| Hawk has reached node 4 of 5...             | Hawk has reached node 2 of 5...              |
+| Eagle has reached node 2 of 5...            | Eagle has reached node 1 of 5...             |
+| Hawk has reached node 5 of 5...             | Hawk has reached node 3 of 5...              |
+| Thread Hawk: Finished                       | Hawk has reached node 4 of 5...              |
+| Eagle has reached node 3 of 5...            | Eagle has reached node 2 of 5...             |
+| Eagle has reached node 4 of 5...            | Hawk has reached node 5 of 5...              |
+| Eagle has reached node 5 of 5...            | Thread Hawk: Finished                        |
+| Thread Eagle: Finished                      | Eagle has reached node 3 of 5...             |
+| 🟩 Both Threads have finished operating!     | Eagle has reached node 4 of 5...             |
+| 🟦 Press L to see the racelog...             | Eagle has reached node 5 of 5...             |
+|                                             | Thread Eagle: Finished                       |
+
 </details>
 
 <br>
@@ -55,8 +54,7 @@ We can see that console writeline, being a shared resource, is affected by the m
 
 <details>
   <summary><i>Example with 3 drones, all with 250ms delay (Click to Expand)</i></summary>
-<pre>
-<div style="background-color:#1e1e1e; color:white; padding:10px; border-radius:6px; font-family:monospace; overflow-x:auto; white-space:pre;">
+
 <span style="color:red;">Thread Hawk: Started...</span>
 <span style="color:blue;">Thread Falcon: Started...</span>
 <span style="color:green;">Thread Eagle: Started...</span>
@@ -81,9 +79,6 @@ We can see that console writeline, being a shared resource, is affected by the m
 <span style="color:red;">Thread Hawk: Finished</span>
 <span style="color:blue;">Falcon has reached node 5 of 5...</span>
 <span style="color:blue;">Thread Falcon: Finished</span>
-</div>
-
-</pre>
 </details>
 
 <br>
